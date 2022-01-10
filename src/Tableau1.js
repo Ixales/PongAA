@@ -13,8 +13,8 @@ class Tableau1 extends Phaser.Scene {
         this.balle = this.physics.add.image(480, 230, 'cercle').setOrigin(0, 0);
         this.balle.setDisplaySize(20, 20);
         this.balle.body.setBounce(1, 1);
-        this.balle.setVelocityX(Phaser.Math.Between(-200,200));
-        this.balle.setVelocityY(Phaser.Math.Between(-200,200));
+        this.balle.setVelocityX(Phaser.Math.Between(-400,400));
+        this.balle.setVelocityY(Phaser.Math.Between(-300,300));
         this.balle.body.setMaxVelocity(1000,1000);
 
 

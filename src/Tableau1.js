@@ -35,6 +35,43 @@ class Tableau1 extends Phaser.Scene {
 
     }
 
+    initKeyboard(){
+        let me = this;
+        this.input.keyboard.on('keyup', function (kevent) {
+            switch (kevent.keyCode) {
+                case Phaser.Input.Keyboard.KeyCodes.S:
+                    me.gauche.setVelocityY(0);
+                    break;
+                case Phaser.Input.Keyboard.KeyCodes.J:
+                    me.droite.setVelocityY(0);
+                    break;
+                case Phaser.Input.Keyboard.KeyCodes.X:
+                    me.gauche.setVelocityY(0);
+                    break;
+                case Phaser.Input.Keyboard.KeyCodes.N:
+                    me.droite.setVelocityY(0);
+                    break;
+            }
+        })
+        this.input.keyboard.on('keydown', function (kevent) {
+            switch (kevent.keyCode) {
+                case Phaser.Input.Keyboard.KeyCodes.S:
+                    me.gauche.setVelocityY(-300);
+                    break;
+                case Phaser.Input.Keyboard.KeyCodes.J:
+                    me.droite.setVelocityY(-300);
+                    break;
+                case Phaser.Input.Keyboard.KeyCodes.X:
+                    me.gauche.setVelocityY(300);
+                    break;
+                case Phaser.Input.Keyboard.KeyCodes.N:
+                    me.droite.setVelocityY(300);
+                    break;
+            }
+
+        })
+    }
+
 
     update() {
         if (this.balle.x > this.largeur) {
@@ -43,6 +80,18 @@ class Tableau1 extends Phaser.Scene {
             this.balle.y = this.hauteur
         }
 
+        }
+        if (this.gauche.y<20){
+            this.gauche.y = 20
+        }
+        if (this.gauche.y>this.hauteur-120){
+            this.gauche.y =this.hauteur-120
+        }
+        if (this.droite.y<20){
+            this.droite.y = 20
+        }
+        if (this.droite.y>this.hauteur-120){
+            this.droite.y =this.hauteur-120
         }
 
     }
